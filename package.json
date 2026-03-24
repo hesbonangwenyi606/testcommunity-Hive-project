@@ -1,0 +1,10 @@
+{
+  "name": "testhive-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Test Hive frontend with a lightweight Node backend",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  }
+}

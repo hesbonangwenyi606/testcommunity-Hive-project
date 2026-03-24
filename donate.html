@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Test Hive | Donate to Kenya's Premier QA Community</title>
+<link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-[#e9e6e4] font-sans">
+    <custom-navbar></custom-navbar>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] flex items-center justify-center bg-[#204045] text-white">
+        <div class="container mx-auto px-6 text-center z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Support Our Community</h1>
+            <p class="text-xl md:text-2xl text-[#7e9693] max-w-2xl mx-auto mb-8">Your donation helps us organize events, provide resources, and grow Kenya's QA ecosystem</p>
+        </div>
+        <div class="absolute inset-0 opacity-20 bg-gradient-to-b from-transparent to-[#204045]"></div>
+    </section>
+    <!-- Donation Options -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#204045] mb-4">Make a Difference</h2>
+                <p class="text-lg text-[#7e9693] max-w-2xl mx-auto">Choose how you'd like to support our community</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-[#e9e6e4] rounded-xl p-8 shadow-md">
+                <div class="mb-6">
+                    <label for="donation-type" class="block text-[#204045] font-medium mb-2">Donation Type</label>
+                    <select id="donation-type" class="w-full px-4 py-3 rounded-lg border border-[#7e9693] bg-white text-[#204045]">
+                        <option value="one-time">One-time Gift</option>
+                        <option value="monthly">Monthly Support</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-[#204045] font-medium mb-2">Donation Amount (KES)</label>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <button class="donation-amount bg-white text-[#204045] px-4 py-3 rounded-lg font-medium hover:bg-[#204045] hover:text-white transition" data-amount="1000">1,000</button>
+                        <button class="donation-amount bg-white text-[#204045] px-4 py-3 rounded-lg font-medium hover:bg-[#204045] hover:text-white transition" data-amount="2500">2,500</button>
+                        <button class="donation-amount bg-white text-[#204045] px-4 py-3 rounded-lg font-medium hover:bg-[#204045] hover:text-white transition" data-amount="5000">5,000</button>
+                        <button class="donation-amount bg-white text-[#204045] px-4 py-3 rounded-lg font-medium hover:bg-[#204045] hover:text-white transition" data-amount="10000">10,000</button>
+                    </div>
+                    <input type="text" id="custom-amount" placeholder="Enter custom amount (KES)" class="w-full px-4 py-3 rounded-lg border border-[#7e9693] bg-white text-[#204045]">
+                </div>
+
+                <div class="mb-6">
+                    <label for="name" class="block text-[#204045] font-medium mb-2">Full Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-[#7e9693] bg-white text-[#204045]">
+                </div>
+
+                <div class="mb-6">
+                    <label for="email" class="block text-[#204045] font-medium mb-2">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-[#7e9693] bg-white text-[#204045]">
+                </div>
+
+                <button id="donate-button" class="w-full bg-[#204045] hover:bg-[#7e9693] text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                    Donate Now
+                </button>
+
+                <div id="sponsor-form" class="hidden mt-8">
+                    <h3 class="text-xl font-bold text-[#204045] mb-4">Event Sponsorship Details</h3>
+                    <div class="mb-4">
+                        <label for="event" class="block text-[#204045] font-medium mb-2">Select Event</label>
+                        <select id="event" class="w-full px-4 py-3 rounded-lg border border-[#7e9693] bg-white text-[#204045]">
+                            <option value="">Select an event</option>
+                            <option value="annual-conference">Annual QA Conference</option>
+                            <option value="automation-workshop">Automation Workshop</option>
+                            <option value="networking-mixer">Networking Mixer</option>
+                            <option value="performance-testing">Performance Testing Workshop</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="company" class="block text-[#204045] font-medium mb-2">Company Name</label>
+                        <input type="text" id="company" class="w-full px-4 py-3 rounded-lg border border-[#7e9693] bg-white text-[#204045]">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-[#204045] font-medium mb-2">Message (Optional)</label>
+                        <textarea id="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-[#7e9693] bg-white text-[#204045]"></textarea>
+                    </div>
+                    <button id="sponsor-submit" class="w-full bg-[#204045] hover:bg-[#7e9693] text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                        Submit Sponsorship Request
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <button id="sponsor-toggle" class="text-[#204045] font-medium hover:underline inline-flex items-center gap-1">
+                    <span>Interested in sponsoring an event?</span>
+                    <i data-feather="chevron-down" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Payment Methods -->
+    <section class="py-16 bg-[#e9e6e4]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#204045] mb-4">Payment Methods</h2>
+                <p class="text-lg text-[#7e9693] max-w-2xl mx-auto">We accept the following payment options</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8 max-w-3xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/M-PESA_LOGO-01.svg/1200px-M-PESA_LOGO-01.svg.png" alt="M-Pesa" class="h-12">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/PayPal_Logo_Icon_2014.svg/1200px-PayPal_Logo_Icon_2014.svg.png" alt="PayPal" class="h-12">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="h-8">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="h-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+<section class="py-20 bg-[#e9e6e4]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#204045] mb-4">Your Impact</h2>
+                <p class="text-lg text-[#7e9693] max-w-2xl mx-auto">See how donations make a difference in our community</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-5xl font-bold text-[#204045] mb-4">24</div>
+                    <h3 class="text-xl font-bold text-[#204045] mb-2">Events Funded</h3>
+                    <p class="text-[#7e9693]">Workshops and conferences made possible by donations</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-5xl font-bold text-[#204045] mb-4">500+</div>
+                    <h3 class="text-xl font-bold text-[#204045] mb-2">Members Supported</h3>
+                    <p class="text-[#7e9693]">QA professionals who benefited from our programs</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-5xl font-bold text-[#204045] mb-4">15</div>
+                    <h3 class="text-xl font-bold text-[#204045] mb-2">Scholarships Awarded</h3>
+                    <p class="text-[#7e9693]">For members to attend training and conferences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#204045] mb-4">Why Our Members Give</h2>
+                <p class="text-lg text-[#7e9693] max-w-2xl mx-auto">Hear from supporters about why they contribute</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-[#e9e6e4] p-8 rounded-xl">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="http://static.photos/people/200x200/1" alt="Sarah K." class="w-12 h-12 rounded-full">
+                        <div>
+                            <h4 class="font-bold text-[#204045]">Sarah K.</h4>
+                            <p class="text-sm text-[#7e9693]">QA Manager, Nairobi</p>
+                        </div>
+                    </div>
+                    <p class="text-[#7e9693]">"I donate monthly because Test Hive helped me grow my career. The workshops and networking opportunities are invaluable for QA professionals in Kenya."</p>
+                </div>
+                <div class="bg-[#e9e6e4] p-8 rounded-xl">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="http://static.photos/people/200x200/2" alt="James M." class="w-12 h-12 rounded-full">
+                        <div>
+                            <h4 class="font-bold text-[#204045]">James M.</h4>
+                            <p class="text-sm text-[#7e9693]">Senior QA Engineer, Mombasa</p>
+                        </div>
+                    </div>
+                    <p class="text-[#7e9693]">"Sponsoring events is my way of giving back. The knowledge sharing in this community elevates the entire QA profession in our country."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-[#0f2d32] to-[#204045] text-white">
+        <div class="container mx-auto px-6 text-center relative">
+            <div class="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNMjAgMGMxMSAwIDIwIDkgMjAgMjBzLTkgMjAtMjAgMjBTMCAzMSAwIDIwIDkgMCAyMCAweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=')]"></div>
+            <div class="relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Have Questions About Giving?</h2>
+                <p class="text-xl text-[#a3c1bd] max-w-2xl mx-auto mb-8">Contact our team to learn more about donation options and impact</p>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="mailto:donate@testhive.co.ke" class="bg-white hover:bg-[#a3c1bd] text-[#0f2d32] hover:text-white px-8 py-3 rounded-full font-medium transition duration-300 shadow-lg hover:shadow-xl">Email Us</a>
+                    <a href="/contact" class="border-2 border-white bg-transparent hover:bg-white text-white hover:text-[#0f2d32] px-8 py-3 rounded-full font-medium transition duration-300 shadow-lg hover:shadow-xl">Contact Form</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/pages/donate.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

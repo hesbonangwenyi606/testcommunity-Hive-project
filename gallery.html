@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Gallery | Test Hive - Kenya's Premier QA Community</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-[#e9e6e4] font-sans">
+    <custom-navbar></custom-navbar>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] flex items-center justify-center bg-[#204045] text-white">
+        <div class="container mx-auto px-6 text-center z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Event Gallery</h1>
+            <p class="text-xl md:text-2xl text-[#7e9693] max-w-2xl mx-auto mb-8">Relive our past events through photos and videos</p>
+        </div>
+        <div class="absolute inset-0 opacity-20 bg-gradient-to-b from-transparent to-[#204045]"></div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+                <h2 class="text-2xl font-bold text-[#204045]">Our Events in Pictures</h2>
+                <div class="flex flex-wrap gap-4">
+                    <button class="filter-btn active bg-[#204045] text-white px-4 py-2 rounded-full" data-filter="all">All Events</button>
+                    <button class="filter-btn bg-[#e9e6e4] text-[#204045] hover:bg-[#204045] hover:text-white px-4 py-2 rounded-full transition" data-filter="conference">Conferences</button>
+                    <button class="filter-btn bg-[#e9e6e4] text-[#204045] hover:bg-[#204045] hover:text-white px-4 py-2 rounded-full transition" data-filter="workshop">Workshops</button>
+                    <button class="filter-btn bg-[#e9e6e4] text-[#204045] hover:bg-[#204045] hover:text-white px-4 py-2 rounded-full transition" data-filter="social">Social Events</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                <!-- Gallery items will be loaded here -->
+            </div>
+
+            <div class="text-center mt-12">
+                <button id="load-more" class="bg-[#204045] hover:bg-[#7e9693] text-white px-8 py-3 rounded-full font-medium transition duration-300 inline-flex items-center gap-2">
+                    <span>Load More</span>
+                    <i data-feather="plus-circle" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Highlights -->
+    <section class="py-16 bg-[#e9e6e4]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#204045] mb-4">Event Highlights</h2>
+                <p class="text-lg text-[#7e9693] max-w-2xl mx-auto">Watch highlights from our most popular events</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative pb-[56.25%]">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#204045] mb-2">2023 Annual QA Conference</h3>
+                        <p class="text-[#7e9693]">Highlights from our biggest event of the year with over 200 attendees.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative pb-[56.25%]">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#204045] mb-2">Automation Workshop</h3>
+                        <p class="text-[#7e9693]">Hands-on training session with industry experts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-[#e9e6e4] rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-[#204045] mb-4">Share Your Event Photos</h2>
+                    <p class="text-lg text-[#7e9693] max-w-xl">Tag us on social media with #TestHiveKE to be featured in our gallery</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="bg-[#204045] hover:bg-[#7e9693] text-white p-4 rounded-full">
+                        <i data-feather="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="bg-[#204045] hover:bg-[#7e9693] text-white p-4 rounded-full">
+                        <i data-feather="twitter" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="bg-[#204045] hover:bg-[#7e9693] text-white p-4 rounded-full">
+                        <i data-feather="linkedin" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/pages/gallery.js"></script>
+</body>
+</html>

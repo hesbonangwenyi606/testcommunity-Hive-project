@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Directory | Test Hive - Kenya's Premier QA Community</title>
+<link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-[#e9e6e4] font-sans">
+    <custom-navbar></custom-navbar>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] flex items-center justify-center bg-[#204045] text-white">
+        <div class="container mx-auto px-6 text-center z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">QA Professionals Directory</h1>
+            <p class="text-xl md:text-2xl text-[#7e9693] max-w-2xl mx-auto mb-8">Connect with skilled QA professionals across Kenya</p>
+            
+            <div class="max-w-2xl mx-auto relative">
+                <input id="member-search" type="text" placeholder="Search members by name, skills, or location..." 
+                       class="w-full px-6 py-4 rounded-full border-none focus:ring-4 focus:ring-[#7e9693] text-[#204045]">
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#204045] text-white p-2 rounded-full">
+                    <i data-feather="search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="absolute inset-0 opacity-20 bg-gradient-to-b from-transparent to-[#204045]"></div>
+    </section>
+
+    <!-- Directory Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold text-[#204045] mb-4 md:mb-0">Our Members</h2>
+                <div class="flex gap-4">
+                    <div class="relative">
+                        <select id="skill-filter" class="appearance-none bg-[#e9e6e4] px-4 py-2 pr-8 rounded-full text-[#204045] focus:outline-none focus:ring-2 focus:ring-[#7e9693]">
+                            <option value="">Filter by Skill</option>
+                            <option>Automation Testing</option>
+                            <option>Manual Testing</option>
+                            <option>Performance Testing</option>
+                            <option>Security Testing</option>
+                        </select>
+                        <i data-feather="chevron-down" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#7e9693]"></i>
+                    </div>
+                    <div class="relative">
+                        <select id="location-filter" class="appearance-none bg-[#e9e6e4] px-4 py-2 pr-8 rounded-full text-[#204045] focus:outline-none focus:ring-2 focus:ring-[#7e9693]">
+                            <option value="">Filter by Location</option>
+                            <option>Nairobi</option>
+                            <option>Mombasa</option>
+                            <option>Kisumu</option>
+                            <option>Remote</option>
+                        </select>
+                        <i data-feather="chevron-down" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#7e9693]"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div id="members-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <p id="directory-empty-state" class="hidden text-center text-[#7e9693] mt-8">No members match the current filters.</p>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-[#e9e6e4]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#204045] mb-6">Join Our Growing Community</h2>
+            <p class="text-lg text-[#7e9693] max-w-2xl mx-auto mb-8">Connect with hundreds of QA professionals across Kenya and expand your network.</p>
+                    <a href="#" class="inline-block bg-[#204045] hover:bg-[#7e9693] text-white px-8 py-3 rounded-full font-medium transition duration-300" data-join-modal>Become a Member</a>
+</div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/pages/directory.js"></script>
+    <script src="components/join-modal.js"></script>
+    <join-modal></join-modal>
+<script>
+        feather.replace();
+    </script>
+</body>
+</html>

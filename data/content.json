@@ -1,0 +1,262 @@
+{
+  "home": {
+    "featuredEventSlug": "annual-qa-conference-2026",
+    "highlights": [
+      {
+        "id": "event-highlight",
+        "type": "Event Highlight",
+        "title": "Annual QA Conference 2026",
+        "description": "Our flagship conference returns with hands-on sessions, community showcases, and hiring conversations for QA professionals across Kenya.",
+        "link": "/events.html",
+        "accent": "#204045",
+        "icon": "star"
+      },
+      {
+        "id": "member-spotlight",
+        "type": "Member Spotlight",
+        "title": "Member Directory Refresh",
+        "description": "Find automation engineers, QA analysts, and test architects by skill, city, and working style in the community directory.",
+        "link": "/directory.html",
+        "accent": "#7e9693",
+        "icon": "users"
+      },
+      {
+        "id": "resource-highlight",
+        "type": "Community Gallery",
+        "title": "Latest Event Moments",
+        "description": "Browse photos from workshops, conferences, and social meetups as the gallery grows with each new community event.",
+        "link": "/gallery.html",
+        "accent": "#204045",
+        "icon": "image"
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "evt_001",
+      "slug": "annual-qa-conference-2026",
+      "title": "Annual QA Conference 2026",
+      "category": "conference",
+      "status": "upcoming",
+      "date": "2026-08-15",
+      "startTime": "09:00",
+      "endTime": "17:00",
+      "venue": "Nairobi Convention Center",
+      "city": "Nairobi",
+      "image": "http://static.photos/technology/1200x630/42",
+      "excerpt": "Kenya's flagship QA conference featuring talks, workshops, and community hiring sessions.",
+      "description": "A full-day conference for QA engineers, test managers, SDETs, and aspiring testers. Expect practitioner-led talks, automation demos, and community networking.",
+      "registrationUrl": "#",
+      "featured": true
+    },
+    {
+      "id": "evt_002",
+      "slug": "automation-testing-workshop-2026",
+      "title": "Automation Testing Workshop",
+      "category": "workshop",
+      "status": "upcoming",
+      "date": "2026-05-22",
+      "startTime": "10:00",
+      "endTime": "15:00",
+      "venue": "iHub",
+      "city": "Nairobi",
+      "image": "http://static.photos/office/1024x576/23",
+      "excerpt": "Hands-on workshop on practical UI and API test automation workflows.",
+      "description": "A practical workshop covering test design, automation layering, and maintainable execution pipelines.",
+      "registrationUrl": "#",
+      "featured": false
+    },
+    {
+      "id": "evt_003",
+      "slug": "qa-networking-mixer-2026",
+      "title": "QA Networking Mixer",
+      "category": "social",
+      "status": "upcoming",
+      "date": "2026-06-12",
+      "startTime": "18:00",
+      "endTime": "21:00",
+      "venue": "Sarova Stanley",
+      "city": "Nairobi",
+      "image": "http://static.photos/people/1024x576/11",
+      "excerpt": "A relaxed evening for practitioners, leads, and hiring teams to connect.",
+      "description": "Meet fellow QA professionals, exchange ideas, and grow your network in an informal setting.",
+      "registrationUrl": "#",
+      "featured": false
+    },
+    {
+      "id": "evt_004",
+      "slug": "performance-testing-deep-dive-2026",
+      "title": "Performance Testing Deep Dive",
+      "category": "workshop",
+      "status": "upcoming",
+      "date": "2026-07-06",
+      "startTime": "09:30",
+      "endTime": "16:00",
+      "venue": "LakeHub",
+      "city": "Kisumu",
+      "image": "http://static.photos/technology/1024x576/45",
+      "excerpt": "Learn to design, run, and interpret performance tests for modern applications.",
+      "description": "A workshop focused on realistic performance test design, tool selection, and bottleneck analysis.",
+      "registrationUrl": "#",
+      "featured": false
+    },
+    {
+      "id": "evt_005",
+      "slug": "security-testing-bootcamp-2026",
+      "title": "Security Testing Bootcamp",
+      "category": "workshop",
+      "status": "upcoming",
+      "date": "2026-09-18",
+      "startTime": "09:00",
+      "endTime": "16:30",
+      "venue": "SwahiliPot Hub",
+      "city": "Mombasa",
+      "image": "http://static.photos/technology/1024x576/56",
+      "excerpt": "An intensive session on security testing techniques, risk thinking, and OWASP fundamentals.",
+      "description": "This bootcamp equips QA professionals with practical approaches for identifying and communicating product security risk.",
+      "registrationUrl": "#",
+      "featured": false
+    },
+    {
+      "id": "evt_006",
+      "slug": "qa-career-growth-panel-2026",
+      "title": "QA Career Growth Panel",
+      "category": "panel",
+      "status": "upcoming",
+      "date": "2026-11-20",
+      "startTime": "17:00",
+      "endTime": "19:30",
+      "venue": "Online",
+      "city": "Remote",
+      "image": "http://static.photos/people/1024x576/22",
+      "excerpt": "Senior practitioners discuss progression from analyst to QA lead and beyond.",
+      "description": "A panel on skill building, leadership, mentorship, and moving across testing specializations.",
+      "registrationUrl": "#",
+      "featured": false
+    }
+  ],
+  "members": [
+    {
+      "id": "mem_001",
+      "slug": "sarah-k",
+      "name": "Sarah K.",
+      "role": "Senior QA Engineer",
+      "location": "Nairobi",
+      "country": "Kenya",
+      "workMode": "On-site",
+      "skills": ["Automation Testing", "Selenium", "Java"],
+      "bio": "Specializing in test automation frameworks with 5+ years of experience.",
+      "avatar": "http://static.photos/people/200x200/1",
+      "featured": true
+    },
+    {
+      "id": "mem_002",
+      "slug": "james-m",
+      "name": "James M.",
+      "role": "QA Lead",
+      "location": "Mombasa",
+      "country": "Kenya",
+      "workMode": "Hybrid",
+      "skills": ["Performance Testing", "JMeter", "Load Testing"],
+      "bio": "Expert in performance testing and optimization of web applications.",
+      "avatar": "http://static.photos/people/200x200/2",
+      "featured": true
+    },
+    {
+      "id": "mem_003",
+      "slug": "amina-w",
+      "name": "Amina W.",
+      "role": "QA Analyst",
+      "location": "Remote",
+      "country": "Kenya",
+      "workMode": "Remote",
+      "skills": ["Manual Testing", "Mobile Testing", "Accessibility"],
+      "bio": "Specializing in mobile app testing and accessibility compliance.",
+      "avatar": "http://static.photos/people/200x200/3",
+      "featured": true
+    },
+    {
+      "id": "mem_004",
+      "slug": "david-o",
+      "name": "David O.",
+      "role": "QA Automation Engineer",
+      "location": "Nairobi",
+      "country": "Kenya",
+      "workMode": "Hybrid",
+      "skills": ["Cypress", "JavaScript", "API Testing"],
+      "bio": "Modern web testing specialist with Cypress and JavaScript.",
+      "avatar": "http://static.photos/people/200x200/4",
+      "featured": false
+    },
+    {
+      "id": "mem_005",
+      "slug": "grace-w",
+      "name": "Grace W.",
+      "role": "Security QA Engineer",
+      "location": "Kisumu",
+      "country": "Kenya",
+      "workMode": "On-site",
+      "skills": ["Security Testing", "Pen Testing", "OWASP"],
+      "bio": "Security testing expert with focus on web application vulnerabilities.",
+      "avatar": "http://static.photos/people/200x200/5",
+      "featured": false
+    },
+    {
+      "id": "mem_006",
+      "slug": "peter-m",
+      "name": "Peter M.",
+      "role": "SDET",
+      "location": "Remote",
+      "country": "Kenya",
+      "workMode": "Remote",
+      "skills": ["Test Architecture", "CI/CD", "Python"],
+      "bio": "Building scalable test automation frameworks integrated with CI/CD.",
+      "avatar": "http://static.photos/people/200x200/6",
+      "featured": false
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gal_001",
+      "title": "Annual Conference 2025",
+      "category": "conference",
+      "image": "http://static.photos/technology/640x360/1",
+      "date": "2025-12-15"
+    },
+    {
+      "id": "gal_002",
+      "title": "Automation Workshop",
+      "category": "workshop",
+      "image": "http://static.photos/office/640x360/2",
+      "date": "2025-10-10"
+    },
+    {
+      "id": "gal_003",
+      "title": "Networking Mixer",
+      "category": "social",
+      "image": "http://static.photos/people/640x360/3",
+      "date": "2025-08-05"
+    },
+    {
+      "id": "gal_004",
+      "title": "Performance Testing Summit",
+      "category": "conference",
+      "image": "http://static.photos/technology/640x360/4",
+      "date": "2025-06-20"
+    },
+    {
+      "id": "gal_005",
+      "title": "Security Testing Workshop",
+      "category": "workshop",
+      "image": "http://static.photos/technology/640x360/5",
+      "date": "2025-04-15"
+    },
+    {
+      "id": "gal_006",
+      "title": "Community Meetup",
+      "category": "social",
+      "image": "http://static.photos/people/640x360/6",
+      "date": "2025-02-28"
+    }
+  ]
+}
