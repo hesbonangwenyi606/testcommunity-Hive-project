@@ -96,26 +96,46 @@
 
             <script>
               (function() {
-                function animateCounter(el) {
+                let loopActive = false;
+
+                function animateCounter(el, onDone) {
                   const target = parseInt(el.dataset.target);
                   const suffix = el.dataset.suffix || '';
                   const duration = 1800;
                   const start = performance.now();
                   function update(now) {
+                    if (!loopActive) { el.textContent = target + suffix; return; }
                     const elapsed = now - start;
                     const progress = Math.min(elapsed / duration, 1);
                     const ease = 1 - Math.pow(1 - progress, 3);
                     el.textContent = Math.floor(ease * target) + suffix;
                     if (progress < 1) requestAnimationFrame(update);
+                    else if (onDone) onDone();
                   }
                   requestAnimationFrame(update);
                 }
 
+                function runLoop() {
+                  if (!loopActive) return;
+                  const els = document.querySelectorAll('.stat-number');
+                  let done = 0;
+                  els.forEach(el => {
+                    animateCounter(el, () => {
+                      done++;
+                      if (done === els.length) {
+                        setTimeout(() => { if (loopActive) runLoop(); }, 800);
+                      }
+                    });
+                  });
+                }
+
                 const observer = new IntersectionObserver((entries) => {
                   entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                      document.querySelectorAll('.stat-number').forEach(animateCounter);
-                      observer.disconnect();
+                    if (entry.isIntersecting && !loopActive) {
+                      loopActive = true;
+                      runLoop();
+                    } else if (!entry.isIntersecting) {
+                      loopActive = false;
                     }
                   });
                 }, { threshold: 0.3 });
