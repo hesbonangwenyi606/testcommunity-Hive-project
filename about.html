@@ -330,6 +330,24 @@
                     carousel.scrollBy({ left: 320, behavior: 'smooth' });
                 });
 
+                // Slow continuous auto-scroll
+                let paused = false;
+                const speed = 0.6; // pixels per frame
+
+                function step() {
+                    if (!paused) {
+                        carousel.scrollLeft += speed;
+                        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 1) {
+                            carousel.scrollLeft = 0;
+                        }
+                    }
+                    requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+
+                carousel.addEventListener('mouseenter', () => { paused = true; });
+                carousel.addEventListener('mouseleave', () => { paused = false; });
+
                 // Enable dragging with mouse
                 let isDown = false;
                 let startX;
