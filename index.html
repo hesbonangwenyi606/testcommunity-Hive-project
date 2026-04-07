@@ -20,7 +20,38 @@
 <div class="container mx-auto px-6 z-10 relative">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-12">
-                    <h1 class="text-4xl md:text-6xl font-bold text-[#204045] mb-6">Test Hive</h1>
+                    <h1 class="text-4xl md:text-6xl font-bold text-[#204045] mb-6"><span id="typewriter-text"></span><span id="typewriter-cursor" style="border-right:3px solid #204045;animation:blink 0.7s step-end infinite;">&#8203;</span></h1>
+                    <style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
+                    <script>
+                      (function(){
+                        const text = 'Test Hive';
+                        const el = document.getElementById('typewriter-text');
+                        const cursor = document.getElementById('typewriter-cursor');
+                        let i = 0;
+                        function type() {
+                          if (i <= text.length) {
+                            el.textContent = text.slice(0, i);
+                            i++;
+                            setTimeout(type, 120);
+                          } else {
+                            setTimeout(() => {
+                              i = 0;
+                              erase();
+                            }, 2000);
+                          }
+                        }
+                        function erase() {
+                          if (i <= text.length) {
+                            el.textContent = text.slice(0, text.length - i);
+                            i++;
+                            setTimeout(erase, 70);
+                          } else {
+                            setTimeout(() => { i = 0; type(); }, 500);
+                          }
+                        }
+                        type();
+                      })();
+                    </script>
                     <p class="text-lg md:text-xl text-[#7e9693] mb-8">Buzzing with Quality. Kenya's premier QA community.</p>
                     <div class="flex justify-center">
                     <a href="/events.html#upcoming-events" class="bg-[#204045] hover:bg-[#7e9693] text-white px-8 py-3 rounded-full font-medium transition duration-300">Upcoming Events</a>
