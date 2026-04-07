@@ -19,7 +19,7 @@ class CustomNavbar extends HTMLElement {
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         .logo img {
-          height: 40px;
+          height: 70px;
         }
 .logo i {
           color: #7e9693;
@@ -85,7 +85,7 @@ class CustomNavbar extends HTMLElement {
       </style>
       <nav>
         <a href="/" class="logo">
-          <img src="/static/testhive-logo.png" alt="Test Hive Logo" class="h-10">
+          <img src="/images/logo.png" alt="Test Community Kenya Logo" class="h-10">
         </a>
 <ul class="nav-links">
           <li><a href="/">Home</a></li>
