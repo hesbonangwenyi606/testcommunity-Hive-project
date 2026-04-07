@@ -59,8 +59,13 @@
 
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-                    <div class="relative pb-[56.25%]">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="relative pb-[56.25%] cursor-pointer group" onclick="playVideo(this, 'PASTE_VIDEO_ID_1')">
+                        <img src="https://picsum.photos/seed/qaconf/800/450" alt="2023 Annual QA Conference" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-[#204045] bg-opacity-80 group-hover:bg-opacity-95 rounded-full w-16 h-16 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#204045] mb-2">2023 Annual QA Conference</h3>
@@ -68,8 +73,13 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-                    <div class="relative pb-[56.25%]">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="relative pb-[56.25%] cursor-pointer group" onclick="playVideo(this, 'PASTE_VIDEO_ID_2')">
+                        <img src="https://picsum.photos/seed/automation/800/450" alt="Automation Workshop" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-[#204045] bg-opacity-80 group-hover:bg-opacity-95 rounded-full w-16 h-16 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#204045] mb-2">Automation Workshop</h3>
@@ -77,6 +87,19 @@
                     </div>
                 </div>
             </div>
+
+            <script>
+              function playVideo(wrapper, videoId) {
+                const iframe = document.createElement('iframe');
+                iframe.className = 'absolute top-0 left-0 w-full h-full';
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                iframe.frameBorder = '0';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                wrapper.innerHTML = '';
+                wrapper.appendChild(iframe);
+              }
+            </script>
         </div>
     </section>
 
