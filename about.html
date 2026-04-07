@@ -141,23 +141,73 @@
                 <p class="text-lg text-[#7e9693] max-w-2xl mx-auto">The difference we're making in Kenya's tech industry</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div id="about-stats-section" class="grid md:grid-cols-3 gap-8">
                 <div class="bg-[#e9e6e4] p-8 rounded-xl shadow-md text-center">
-                    <div class="text-5xl font-bold text-[#204045] mb-4">500+</div>
+                    <div class="text-5xl font-bold text-[#204045] mb-4 stat-number" data-target="500" data-suffix="+">0</div>
                     <h3 class="text-xl font-bold text-[#204045] mb-2">Members</h3>
                     <p class="text-[#7e9693]">Active QA professionals in our community</p>
                 </div>
                 <div class="bg-[#e9e6e4] p-8 rounded-xl shadow-md text-center">
-                    <div class="text-5xl font-bold text-[#204045] mb-4">24</div>
+                    <div class="text-5xl font-bold text-[#204045] mb-4 stat-number" data-target="24" data-suffix="">0</div>
                     <h3 class="text-xl font-bold text-[#204045] mb-2">Events</h3>
                     <p class="text-[#7e9693]">Workshops and conferences annually</p>
                 </div>
                 <div class="bg-[#e9e6e4] p-8 rounded-xl shadow-md text-center">
-                    <div class="text-5xl font-bold text-[#204045] mb-4">15</div>
+                    <div class="text-5xl font-bold text-[#204045] mb-4 stat-number" data-target="15" data-suffix="">0</div>
                     <h3 class="text-xl font-bold text-[#204045] mb-2">Partners</h3>
                     <p class="text-[#7e9693]">Tech companies supporting our mission</p>
                 </div>
             </div>
+
+            <script>
+              (function() {
+                let loopActive = false;
+
+                function animateCounter(el, onDone) {
+                  const target = parseInt(el.dataset.target);
+                  const suffix = el.dataset.suffix || '';
+                  const duration = 1800;
+                  const start = performance.now();
+                  function update(now) {
+                    if (!loopActive) { el.textContent = target + suffix; return; }
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = Math.floor(ease * target) + suffix;
+                    if (progress < 1) requestAnimationFrame(update);
+                    else if (onDone) onDone();
+                  }
+                  requestAnimationFrame(update);
+                }
+
+                function runLoop() {
+                  if (!loopActive) return;
+                  const els = document.querySelectorAll('#about-stats-section .stat-number');
+                  let done = 0;
+                  els.forEach(el => {
+                    animateCounter(el, () => {
+                      done++;
+                      if (done === els.length) {
+                        setTimeout(() => { if (loopActive) runLoop(); }, 800);
+                      }
+                    });
+                  });
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting && !loopActive) {
+                      loopActive = true;
+                      runLoop();
+                    } else if (!entry.isIntersecting) {
+                      loopActive = false;
+                    }
+                  });
+                }, { threshold: 0.3 });
+
+                observer.observe(document.getElementById('about-stats-section'));
+              })();
+            </script>
         </div>
     </section>
     <!-- Team Section -->
