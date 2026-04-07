@@ -34,19 +34,7 @@
                             i++;
                             setTimeout(type, 120);
                           } else {
-                            setTimeout(() => {
-                              i = 0;
-                              erase();
-                            }, 2000);
-                          }
-                        }
-                        function erase() {
-                          if (i <= text.length) {
-                            el.textContent = text.slice(0, text.length - i);
-                            i++;
-                            setTimeout(erase, 70);
-                          } else {
-                            setTimeout(() => { i = 0; type(); }, 500);
+                            cursor.style.display = 'none';
                           }
                         }
                         type();
