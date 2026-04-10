@@ -11,7 +11,6 @@ npm start
 The server starts on `http://127.0.0.1:3000` by default.
 
 ## Admin dashboard
-
 - Open `/admin.html`
 - Default username: `admin`
 - Default password: `changeme123`
@@ -36,7 +35,6 @@ ADMIN_USERNAME=your_admin ADMIN_PASSWORD=strong_password npm start
 - `POST /api/sponsorships`
 
 ## Data files
-
 - SQLite database: `data/testhive.sqlite`
 - Seed content source: `data/content.json`
 #
